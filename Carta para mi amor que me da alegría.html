@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)file:///C:/Users/Cp/AppData/Local/Microsoft/Windows/INetCache/IE/PB95NCQ1/para_ti_bby[1].html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Carta para mi amor a distancia</title>
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffe6f0;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Contenedor de la carta */
+    .card-container {
+      width: 300px;
+      height: 400px;
+      perspective: 1000px;
+      margin: 100px auto;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Lados de la carta */
+    .card-front, .card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      transition: transform 1s;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Frente de la carta */
+    .card-front {
+      background-color: #ffccd5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Contenedor del corazón */
+    .heart-container {
+      width: 100px;
+      height: 90px;
+      position: relative;
+    }
+
+    /* Corazón animado */
+    .heart {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100px;
+      height: 90px;
+      background: red;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      animation: pulse 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.1); }
+      100% { transform: rotate(-45deg) scale(1); }
+    }
+
+    /* Reverso de la carta */
+    .card-back {
+      background-color: #fff0f5;
+      transform: rotateY(180deg);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Animación al hacer clic */
+    .card-container.flipped .card-front {
+      transform: rotateY(180deg);
+    }
+
+    .card-container.flipped .card-back {
+      transform: rotateY(360deg);
+    }
+
+    /* Mensaje de la carta */
+    .message {
+      color: #d6336c;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container" id="card">
+    <div class="card-front">
+      <div class="heart-container">
+        <div class="heart"></div>
+      </div>
+      <h2>Haz clic para abrir</h2>
+    </div>
+    <div class="card-back">
+      <div class="message">
+        <h1>Para mi amor a distancia</h1>
+        <p>Mi amor, aunque la distancia nos separe, mi corazón late por ti cada día. Tu sonrisa ilumina mis pensamientos y tu amor me da fuerza. Cuento los días para abrazarte de nuevo.</p>
+        <p>Te amo más allá de los kilómetros.</p>
+        <p>Con todo mi amor,<br></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('card').addEventListener('click', function() {
+      this.classList.toggle('flipped');
+    });
+  </script>
+
+</body></html>
